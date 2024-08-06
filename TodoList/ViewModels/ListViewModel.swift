@@ -47,11 +47,11 @@ class ListViewModel: ObservableObject {
     }
     
     func updateItem(item: ItemModel) {
-        // Code below is shorthand for this
-//      if let index = items.firstIndex { (existingItem) -> Bool in
-//            return existingItem.id == item.id
-//        }
-        // If statement used to handle the optional (if no items)
+// Code below is shorthand for this
+// if let index = items.firstIndex { (existingItem) -> Bool in
+// return existingItem.id == item.id
+//  }
+// Similar to guard let statements, used to handle the Optionals (maybe there is a cleaner way?)
         if let index = items.firstIndex(where: { $0.id == item.id }) {
             items[index] = item.toggleisCompleted()
         }
