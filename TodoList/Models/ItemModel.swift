@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ItemModel: Identifiable {
+struct ItemModel: Identifiable, Codable {
     
     let id: String
     let title: String
@@ -22,6 +22,7 @@ struct ItemModel: Identifiable {
     func toggleisCompleted() -> ItemModel {
         return ItemModel(id: id, title: title, isCompleted: !isCompleted)
     }
+    
     
     
 }
